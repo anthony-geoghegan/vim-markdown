@@ -2,7 +2,7 @@
 " Language:     Markdown
 " Maintainer:   Tim Pope <vimNOSPAM@tpope.org>
 " Filenames:    *.markdown
-" Last Change:  2013 May 30
+" Last Change:  2017 January 06
 
 if exists("b:current_syntax")
   finish
@@ -93,6 +93,7 @@ exe 'syn region markdownBoldItalic matchgroup=markdownBoldItalicDelimiter start=
 exe 'syn region markdownBoldItalic matchgroup=markdownBoldItalicDelimiter start="\S\@<=___\|___\S\@=" end="\S\@<=___\|___\S\@=" keepend contains=markdownLineStart,@Spell' . s:concealends
 
 syn region markdownCode matchgroup=markdownCodeDelimiter start="`" end="`" keepend contains=markdownLineStart
+syn region markdownCode matchgroup=markdownCodeDelimiter start="` \+" end=" \+`" keepend contains=markdownLineStart
 syn region markdownCode matchgroup=markdownCodeDelimiter start="`` \=" end=" \=``" keepend contains=markdownLineStart
 syn region markdownCode matchgroup=markdownCodeDelimiter start="^\s*```*.*$" end="^\s*```*\ze\s*$" keepend
 
